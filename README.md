@@ -6,11 +6,11 @@ Extension Chrome (Manifest V3) qui masque :
 
 ## Installation (mode développeur)
 
-1. Dézippe le dossier `hide-ai-overview`.
-2. Ouvre Chrome → `chrome://extensions`.
-3. Active le **Mode développeur** (en haut à droite).
-4. Clique sur **Charger l'extension non empaquetée** et sélectionne le dossier `hide-ai-overview`.
-5. Va sur `google.com` (ou un domaine Google listé dans `manifest.json`) et lance une recherche.
+1. Dézipper le dossier `hide-ai-overview`.
+2. Ouvrir Chrome → `chrome://extensions`.
+3. Activer le **Mode développeur** (en haut à droite).
+4. Cliquer sur **Charger l'extension non empaquetée** et sélectionner le dossier `hide-ai-overview`.
+5. Allez sur `google.com` (ou un domaine Google listé dans `manifest.json`) et lancer une recherche.
 
 ## Fonctionnement
 
@@ -33,18 +33,18 @@ Le clic sur l'icône de l'extension ouvre un petit panneau avec deux réglages, 
 
 Google modifie régulièrement le balisage de ses pages de résultats. Si le blocage cesse de fonctionner un jour :
 
-1. Ouvre la page de résultats concernée, clic droit sur l'élément AI Overview (ou l'onglet AI Mode) → **Inspecter**.
-2. Regarde s'il a toujours un `aria-label` reconnaissable, ou récupère le nouveau texte du disclaimer.
-3. Ajoute la nouvelle valeur dans les tableaux `ARIA_LABELS` / `TEXT_DISCLAIMER_PATTERNS` / `TAB_LABEL_PATTERNS` en haut de `content.js`.
-4. Recharge l'extension depuis `chrome://extensions` (icône ↻).
+1. Ouvrir la page de résultats concernée, clic droit sur l'élément AI Overview (ou l'onglet AI Mode) → **Inspecter**.
+2. Regarder s'il a toujours un `aria-label` reconnaissable, ou récupèrer le nouveau texte du disclaimer.
+3. Ajouter la nouvelle valeur dans les tableaux `ARIA_LABELS` / `TEXT_DISCLAIMER_PATTERNS` / `TAB_LABEL_PATTERNS` en haut de `content.js`.
+4. Recharger l'extension depuis `chrome://extensions` (icône ↻).
 
 En attendant une mise à jour, active le **mode strict** dans le popup : il continuera à fonctionner tant que Google conserve le paramètre `udm=14`.
 
 ## Limites connues
 
-- Les sélecteurs basés sur le texte sont sensibles à la langue de l'interface Google ; seuls le français et l'anglais sont couverts par défaut. Ajoute d'autres langues dans `TEXT_DISCLAIMER_PATTERNS` / `TAB_LABEL_PATTERNS` si besoin.
+- Les sélecteurs basés sur le texte sont sensibles à la langue de l'interface Google ; seuls le français et l'anglais sont couverts par défaut. Ajouter d'autres langues dans `TEXT_DISCLAIMER_PATTERNS` / `TAB_LABEL_PATTERNS` si besoin.
 - L'extension ne modifie que l'affichage (les éléments sont masqués via `display: none`), elle ne bloque pas le chargement réseau du contenu AI Overview côté serveur.
-- Domaines Google couverts : voir la liste dans `manifest.json` (`host_permissions` et `content_scripts.matches`). Ajoute d'autres domaines nationaux si tu utilises un TLD Google non listé.
+- Domaines Google couverts : voir la liste dans `manifest.json` (`host_permissions` et `content_scripts.matches`). Ajouter d'autres domaines nationaux si vous utilisez un TLD Google non listé.
 
 ## Fichiers
 
