@@ -1,13 +1,3 @@
-/*
-  Règles CSS "instantanées" appliquées avant content.js.
-  On cible en priorité les attributs d'accessibilité (aria-label),
-  car Google change ses noms de classes très souvent mais touche
-  rarement aux libellés d'accessibilité.
-  Ces règles sont volontairement redondantes avec content.js :
-  elles servent surtout à éviter un flash visuel de l'AI Overview
-  pendant les quelques millisecondes avant que le script ne s'exécute.
-*/
-
 [aria-label="AI Overview" i],
 [aria-label="Aperçu IA" i],
 [aria-label="AI Mode" i],
