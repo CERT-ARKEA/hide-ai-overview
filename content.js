@@ -1,24 +1,3 @@
-/*
- * Bloqueur AI Overview / AI Mode — content.js
- * ---------------------------------------------------------------
- * Stratégie (Google change ses classes CSS très fréquemment, donc
- * on évite de s'appuyer uniquement sur elles) :
- *
- *  1. Attributs d'accessibilité (aria-label) — les plus stables.
- *  2. Repli sur des motifs de texte connus (disclaimers IA), en
- *     remontant jusqu'à un conteneur "carte" plausible.
- *  3. Repli sur le libellé exact des onglets de la barre d'outils
- *     de recherche ("AI Mode" / "Mode IA").
- *  4. MutationObserver pour réagir au rendu asynchrone de Google.
- *  5. Mode strict optionnel : redirige vers udm=14 (filtre "Web"
- *     officiel de Google, sans AI Overview ni AI Mode).
- *
- * Si Google modifie son balisage et que le blocage cesse de
- * fonctionner, complète les tableaux TEXT_PATTERNS / ARIA_LABELS
- * ci-dessous après inspection du DOM (clic droit > Inspecter).
- * ---------------------------------------------------------------
- */
-
 (function () {
   "use strict";
 
